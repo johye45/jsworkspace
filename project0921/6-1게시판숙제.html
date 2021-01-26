@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            width: 600px;
+            height: 500px;
+            background:violet;
+            margin: auto;
+        }
+        #d1{
+            width: 600px;
+            height: 50px;
+            /*background-color: blueviolet;*/
+            margin: 0px;
+            
+            
+        }
+        button{
+            width: 190px;
+            height: 50px;
+            font-size: 20px;
+            font-weight: bold; 
+            border: 2px solid black; 
+            padding: 12px 20px;       
+            }
+        #d1 button{
+            margin: auto;
+        }
+        #d2{
+            width: 600px;
+            height: 450px;
+            position: relative;
+        }
+        #A{
+            width: 600px;
+            height: 450px;
+            background-color:wheat ;
+            position: absolute;
+            
+        }
+        #B{
+            width: 600px;
+            height: 450px;
+            background-color:wheat;
+            position: absolute;
+        }
+        #C{
+            width: 600px;
+            height: 450px;
+            background-color:wheat;
+            position: absolute;
+        }
+
+    </style>
+    <script>
+        var bt1;
+        var bt2;
+        var bt3;
+        var a;
+        var b;
+        var c;
+
+        function init(){
+            bt1=document.getElementById("bt1");
+            bt2=document.getElementById("bt2");
+            bt3=document.getElementById("bt3");
+            a = document.getElementById("A");
+            b = document.getElementById("B");
+            c = document.getElementById("C");
+            
+            bt1.addEventListener("mouseover", function(){
+                a.style.display ="block";
+            });
+            bt1.addEventListener("mouseout", function(){
+                a.style.display ="none";
+            });
+            bt2.addEventListener("mouseover", function(){
+                b.style.display ="block";
+            });
+            bt2.addEventListener("mouseout", function(){
+                b.style.display ="none";
+            });
+            bt3.addEventListener("mouseover", function(){
+                c.style.display ="block";
+            });
+            bt3.addEventListener("mouseout", function(){
+                c.style.display ="none";
+            });
+        }
+
+        window.addEventListener("load", function(){
+            init();
+        });
+
+    </script>
+</head>
+<body>
+    <div id = "wrapper">
+        <div id = "d1">
+            <button id = "bt1">공지사항</button><button id = "bt2">Q n A</button><button id = "bt3">자유게시판</button>
+        </div>
+        <div id = "d2">
+            <div id="A">공지사항 내용</div>
+            <div id="B">Q&A내용</div>
+            <div id="C">자유게시판 내용</div>
+        </div>
+    </div>
+</body>
+</html>

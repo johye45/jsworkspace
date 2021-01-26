@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의맵</title>
+<style>
+    #myMap {
+        width: 1000px;
+        height: 800px;
+        background-color: chartreuse;
+        margin:auto;
+
+    }
+</style>
+<script>
+    /*
+    class: 로직을 재사용하기 위함, 즉 또 작성하지 않게 위해 클래스 안의 메서드에 보관
+    json(javascropt object notation ) : 로직이 목적이 아닌, 데이터만 전달하기 위한 객체
+    var mapProp={ }; =>json임
+    */
+    var myMap ;
+    function init(){
+        myMap = document.getElementById("myMap");
+        var pos =new google.maps.LatLng(37.500377, 127.036569)
+        var mapProp={//=> 1회성으로 만든 객체( class가 아닌 상태로 만든것임 )
+            center: pos,
+            zoom:15//카메라 크기
+            };
+
+        //구글맵 객체 생성
+        var map = new google.maps.Map(myMap, mapProp);
+        
+        
+        //위치 마커 생성
+        var marker = new google.maps.marker({
+            position:pos,
+            animation:google.maps.Animation.BOUNCE,
+            // icon:"../images/shooting/bullet.png",크기,위치
+            icon:{
+                url:"../images/shooting/bullet.png",
+                scaledSize:new google.maps.Size(45,45)//이미지 크기 조절
+            }
+
+        });
+        marker.setMap(map);//마커를 적용할 맵
+
+        //마커에 클릭 이벤트 부여하기
+        google.maps.event.addListener(marker,"click",function(){
+            //alert("여기가 궁금해");
+            map.setZoom(20);//클릭하면 위치가 커짐
+        
+            //정보창 띄우기
+            var pop = new google.maps.InfoWindow({
+                content:"여기가 역삼 맛집이당!!!"
+            });
+            pop.open(map,marker);//map에 marker위치에 팝업 띄우기
+        });
+
+    }
+
+</script>
+
+</head>
+<body>
+    <div id="myMap">구글지도 나올 예정</div>
+</body>
+</html>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgPqrBx1zn8RZJGxxyb9LeHzZAi5u9JWw&callback=init"></script>

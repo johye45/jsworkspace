@@ -1,0 +1,24 @@
+<script>
+
+    var fruit=["apple","banana","graph","orange"];
+    var car=["bmw","audi","benz","kia"];
+    var box=[];//
+    
+    box.push(fruit);//기존의 1차원 이었던 box에 또다른 배열 추가
+    box.push(car);
+    
+    // for(바깥쪽배열의 크기){
+    //     for(안쪽배열의 크기){
+
+    //     }
+    // }
+
+    for(var i=0; i<box.length;i++){
+        for(var a =0; a<box[i].length;a++){
+            document.write(box[i][a]);
+        }
+    }
+    document.write("<br/>")
+    
+
+</script>

@@ -1,0 +1,39 @@
+<script>
+/*JSON은 프로그래밍 언어 아님, 단지 표기법임, 
+그냥 문자취급 해야함
+단지 자바스크립트에서는 저 표기법을 객체로 인식하는 것 뿐임
+즉 다른 프로그래밍 언어에서는 json단지 문자열일뿐임
+자바스크립트가 아래의 json표기법 문자열을 인식하여, 
+객체로 변환하는 것임
+
+검증기로 에러 확인하기 https://jsonlint.com/ 요기서
+*/
+
+var json={
+    "name":"철수",
+    "age":27,
+    "lang":["java","python","c","swift"],
+    "marray":false,
+    "pets":[
+        {   
+            "type":"dog",
+            "dog_name":"뽀삐",
+            "dog_age":8,
+            "dog_color":"white"
+        },
+        {   
+            "type":"cat",
+            "dog_name":"나비",
+            "dog_age":8,
+            "dog_color":"black"
+        },
+        {   
+            "type":"snake",
+            "dog_name":"아나콘다",
+            "dog_age":8,
+            "dog_color":"gray"
+        }
+
+    ]
+};
+</script>
